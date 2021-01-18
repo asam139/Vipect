@@ -1,0 +1,141 @@
+fastlane_require 'dotenv'
+default_platform(:ios)
+
+before_all do
+  Dotenv.overload('.env.secret', '.env')
+end
+
+platform :ios do
+  def sources
+    return ENV['POD_SOURCES'].split(",")    
+  end
+
+  desc 'Validate the project is ready for releasing'
+  lane :lint do
+    puts ENV['ACCESS_TOKEN']
+
+    sh("cd .. && mint run realm/SwiftLint@0.40.3 swiftlint autocorrect --format || :")
+
+    pod_lib_lint(
+      allow_warnings: true,
+      sources: sources(),
+      private: true
+    )
+  end
+
+  desc 'Release a new version with a `patch` bump_type'
+  lane :patch do
+    release('patch')
+  end
+
+  desc 'Release a new version with a `minor` bump_type'
+  lane :minor do
+    release('minor')
+  end
+
+  desc 'Release a new version with a `major` bump_type'
+  lane :major do
+    release('major')
+  end
+
+  def release(type)
+    #branch = ENV['RELEASE_BRANCH']
+    #ensure_git_branch(
+    #  branch: branch
+    #)
+    new_changes = sh("git log #{last_git_tag}..HEAD | wc -l").strip!
+    if new_changes == '0'
+      UI.user_error!("No changes since last release: #{last_git_tag}, please add new features and try again!")
+    end
+
+    # pod_push lints before push it
+    #lint
+
+    podspec = ENV['PODSPEC']
+    podrepo = ENV['POD_REPO']
+    sources_paths = ENV['SOURCES_PATHS'].split(',')
+    git_path = [podspec] and sources_paths
+
+    version = version_bump_podspec(
+      path: podspec,
+      bump_type: type
+    )
+
+    git_add(
+      path: git_path,
+      shell_escape: false
+    )
+
+    git_commit(
+      path: git_path,
+      message: "release: v#{version}"
+    )
+
+    add_git_tag(
+      tag: "#{version}"
+    )
+
+    push_to_git_remote
+
+    skip_import_validation = is_ci
+    pod_push(
+      path: podspec,
+      repo: podrepo,
+      sources: sources(),
+      use_bundle_exec: true,
+      allow_warnings: true,
+      skip_import_validation: skip_import_validation
+    )
+
+    author = last_git_commit[:author]
+    repo_url = ENV['REPO_URL']
+    alert("*#{ENV['NAME']} v#{version} is here 🎉*", { :'Download URL' => repo_url, :Author => author })
+  end
+
+  desc "Runs all the unit and ui tests"
+  lane :test do
+    workspace = ENV['WORKSPACE']
+    scheme = ENV['SCHEME']
+    no_ci = !is_ci
+
+    cocoapods(
+      podfile: "./Example/Podfile",
+      repo_update: false
+    )
+    
+    scan(
+      workspace: workspace,
+      scheme: scheme,
+      skip_slack: no_ci
+    )
+    
+    if no_ci
+      check_xcov
+    end
+  end
+
+  def check_xcov()
+    workspace = ENV['WORKSPACE']
+    scheme = ENV['SCHEME']
+    no_ci = !is_ci
+    xcov(
+      workspace: workspace,
+      scheme: scheme,
+      output_directory: "fastlane/xcov_output",
+      minimum_coverage_percentage: 70.0,
+      skip_slack: no_ci
+    )
+  end
+
+  def alert(message, payload)
+    if is_ci && ENV['SLACK_URL']
+      payload['Date'] = Time.new.to_s
+      slack(
+        message: message,
+        payload: payload,
+        default_payloads: []
+      )
+     end
+  end
+
+end

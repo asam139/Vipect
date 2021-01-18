@@ -1,0 +1,6 @@
+framework module Vipect {
+  umbrella header "Vipect-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,36 @@
+name: Release
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  build:
+    if: github.event.pull_request.merged == true
+    name: Release
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        xcode: ['/Applications/Xcode_12.2.app/Contents/Developer']
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+      - name: Fetch tags
+        run: git fetch --tags
+      - uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }} # change your gemfile path
+          restore-keys: |
+            ${{ runner.os }}-gems-
+      - name: Bundle Install
+        run: |
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3
+      - name: Patch
+        run: bundle exec fastlane patch
