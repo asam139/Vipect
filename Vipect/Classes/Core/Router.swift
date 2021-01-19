@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import Swinject
 
-public protocol RouterProtocol: ViperComponent {
+public protocol RouterProtocol: ViperComponentDI {
     var _presenter: PresenterProtocol! { get set }
     var _view: UserInterfaceProtocol! { get }
 
@@ -32,8 +33,20 @@ public extension RouterProtocol {
         show(from: from, embedInNavController: embedInNavController)
     }
 
-    func present(from: UIViewController, embedInNavController: Bool = false, presentationStyle: UIModalPresentationStyle = .fullScreen, transitionStyle: UIModalTransitionStyle = .coverVertical, completion: (() -> Void)? = nil) {
-        present(from: from, embedInNavController: embedInNavController, presentationStyle: presentationStyle, transitionStyle: transitionStyle, completion: completion)
+    func present(
+        from: UIViewController,
+        embedInNavController: Bool = false,
+        presentationStyle: UIModalPresentationStyle = .fullScreen,
+        transitionStyle: UIModalTransitionStyle = .coverVertical,
+        completion: (() -> Void)? = nil
+    ) {
+        present(
+            from: from,
+            embedInNavController: embedInNavController,
+            presentationStyle: presentationStyle,
+            transitionStyle: transitionStyle,
+            completion: completion
+        )
     }
     func dismiss(animated flag: Bool = true, completion: (() -> Void)? = nil) {
         dismiss(animated: flag, completion: completion)
@@ -45,7 +58,13 @@ open class Router: RouterProtocol {
     public var _view: UserInterfaceProtocol! {
         return _presenter._view
     }
-
+    
+    private let container: Container
+    
+    required public init(container: Container) {
+        self.container = container
+    }
+    
     open func embedInNavigationController() -> UINavigationController {
         return getNavigationController() ?? UINavigationController(rootViewController: viewController)
     }
@@ -78,7 +97,7 @@ open class Router: RouterProtocol {
         viewController.dismiss(animated: flag, completion: completion)
     }
 
-    required public init() { }
+    
 }
 
 // MARK: - Get navigation controller helper

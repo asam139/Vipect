@@ -5,7 +5,9 @@
 //  Created by Saul Moreno Abril on 22/12/20.
 //
 
-public protocol PresenterProtocol: class, ViperComponent {
+import Swinject
+
+public protocol PresenterProtocol: class, ViperComponentDI {
     var _interactor: InteractorProtocol! { get set }
     var _view: UserInterfaceProtocol! { get set }
     var _router: RouterProtocol! { get set }
@@ -21,8 +23,12 @@ open class Presenter: PresenterProtocol {
     public var _interactor: InteractorProtocol!
     public weak var _view: UserInterfaceProtocol!
     public var _router: RouterProtocol!
-
-    required public init() { }
+    
+    private let container: Container
+    
+    required public init(container: Container) {
+        self.container = container
+    }
     
     open func setUpView() {
         bindWithView()

@@ -7,11 +7,14 @@
 
 import Foundation
 import UIKit
+import Swinject
 
 private let kTabletSuffix = "Pad"
 
-public protocol ViperComponent {
-    init()
+public protocol ViperComponent {}
+
+public protocol ViperComponentDI: ViperComponent {
+    init(container: Container)
 }
 
 // MARK: - Module
@@ -21,7 +24,7 @@ public struct Module {
     public private(set) var presenter: PresenterProtocol
     public private(set) var router: RouterProtocol
 
-    static func build<T: RawRepresentable & ViperModule>(_ module: T, bundle: Bundle = Bundle.main, deviceType: UIUserInterfaceIdiom? = nil) -> Module where T.RawValue == String {
+    static func build<T: RawRepresentable & ViperModule>(_ module: T, container: Container = Container(), bundle: Bundle = Bundle.main, deviceType: UIUserInterfaceIdiom? = nil) -> Module where T.RawValue == String {
         //Get class types
         let interactorClass = module.classForViperComponent(.interactor, bundle: bundle) as! InteractorProtocol.Type
         let presenterClass = module.classForViperComponent(.presenter, bundle: bundle) as! PresenterProtocol.Type
@@ -29,9 +32,9 @@ public struct Module {
 
         //Allocate VIPER components
         let V = loadView(forModule: module, bundle: bundle, deviceType: deviceType)
-        let I = interactorClass.init()
-        let P = presenterClass.init()
-        let R = routerClass.init()
+        let I = interactorClass.init(container: container)
+        let P = presenterClass.init(container: container)
+        let R = routerClass.init(container: container)
 
         return build(view: V, interactor: I, presenter: P, router: R)
     }
