@@ -7,7 +7,9 @@ PODS:
   - RxRelay (6.0.0):
     - RxSwift (= 6.0.0)
   - RxSwift (6.0.0)
-  - Vipect (0.1.0)
+  - Swinject (2.7.1)
+  - Vipect (0.1.0):
+    - Swinject (~> 2.7.1)
 
 DEPENDENCIES:
   - Nimble (~> 9.0.0)
@@ -23,6 +25,7 @@ SPEC REPOS:
     - RxCocoa
     - RxRelay
     - RxSwift
+    - Swinject
 
 EXTERNAL SOURCES:
   Vipect:
@@ -34,7 +37,8 @@ SPEC CHECKSUMS:
   RxCocoa: 3f79328fafa3645b34600f37c31e64c73ae3a80e
   RxRelay: 8d593be109c06ea850df027351beba614b012ffb
   RxSwift: c14e798c59b9f6e9a2df8fd235602e85cc044295
-  Vipect: 5720e43a9faf92e2503385ec8f8b480c440cadc0
+  Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
+  Vipect: 9c5504aecf76e6026228c81ba1b983a25d7c2334
 
 PODFILE CHECKSUM: 018a9b0745221c2fa6909b7b5c65cf34288be7d2
 
