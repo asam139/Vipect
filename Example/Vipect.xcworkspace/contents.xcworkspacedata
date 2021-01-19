@@ -2,12 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/saumor/repositories/personal/vipect/Example/Vipect.xcodeproj">
+      location = "group:Vipect.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Vipect.xcodeproj">
    </FileRef>
 </Workspace>

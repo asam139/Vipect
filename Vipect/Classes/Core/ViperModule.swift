@@ -34,9 +34,6 @@ public protocol ViperModule {
 }
 
 public extension ViperModule where Self: RawRepresentable, Self.RawValue == String {
-    var viewType: ViperViewType {
-        return .storyboard
-    }
 
     var viewName: String {
         return rawValue
