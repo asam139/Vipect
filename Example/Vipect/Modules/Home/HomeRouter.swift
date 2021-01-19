@@ -12,8 +12,7 @@ import Vipect
 final class HomeRouter: Router {
     func showSecondModule() {
         let module = AppModules.second.build()
-        let router = module.router as! SecondRouter
-        router.present(from: viewController, embedInNavController: true)
+        module.router.present(from: viewController, embedInNavController: true)
     }
 }
 

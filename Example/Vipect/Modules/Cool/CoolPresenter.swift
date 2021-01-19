@@ -12,18 +12,6 @@ import Vipect
 // MARK: - CoolPresenter Class
 final class CoolPresenter: Presenter {
     var _viewModel: UserSettings!
-
-    override func bindLyfeCycle() {
-        super.bindLyfeCycle()
-        _view.lifeCycleObservable.subscribe(onNext: { value in
-            switch value {
-            case .viewDidDisappear:
-                print("The swiftUI host has appeared!")
-            default:
-                return
-            }
-        }).disposed(by: disposeBag)
-    }
 }
 
 // MARK: - CoolPresenter API

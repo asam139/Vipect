@@ -7,13 +7,13 @@ PODS:
   - RxRelay (6.0.0):
     - RxSwift (= 6.0.0)
   - RxSwift (6.0.0)
-  - Vipect (0.1.0):
-    - RxCocoa (~> 6.0)
-    - RxSwift (~> 6.0)
+  - Vipect (0.1.0)
 
 DEPENDENCIES:
   - Nimble (~> 9.0.0)
   - Quick (~> 3.0.0)
+  - RxCocoa (~> 6.0)
+  - RxSwift (~> 6.0)
   - Vipect (from `../`)
 
 SPEC REPOS:
@@ -34,8 +34,8 @@ SPEC CHECKSUMS:
   RxCocoa: 3f79328fafa3645b34600f37c31e64c73ae3a80e
   RxRelay: 8d593be109c06ea850df027351beba614b012ffb
   RxSwift: c14e798c59b9f6e9a2df8fd235602e85cc044295
-  Vipect: 6a6b4059d487d4d14c3fe1fc01211163a87c8d1b
+  Vipect: 5720e43a9faf92e2503385ec8f8b480c440cadc0
 
-PODFILE CHECKSUM: bc2f3445b56bb1d17167e5aaad48ae24b0a8f02d
+PODFILE CHECKSUM: 018a9b0745221c2fa6909b7b5c65cf34288be7d2
 
 COCOAPODS: 1.10.1

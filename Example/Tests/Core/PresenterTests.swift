@@ -23,10 +23,6 @@ class PresenterTests: QuickSpec {
                 expect(presenter.isCalled).toEventually(equal(true))
             }
 
-            it("observes view not loaded") {
-                expectViewLifecycle(method: kViewNotLoaded)
-            }
-
             it("observes view did loaded") {
                 expectViewLifecycle(method: kViewDidLoaded) {
                     $0.viewDidLoad()

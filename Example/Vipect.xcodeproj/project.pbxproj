@@ -262,9 +262,7 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				9CD955E3259F78010027B07C /* ModuleTests.swift */,
-				9CD955E4259F78010027B07C /* PresenterTests.swift */,
-				9CD955E5259F78010027B07C /* RouterTests.swift */,
+				869D644125B733FD006F504C /* Core */,
 				9CD9565525A0C1890027B07C /* Mocks */,
 				9CD9566925A0C2680027B07C /* Utils */,
 				9CD9564925A0AC7A0027B07C /* Extensions */,
@@ -290,6 +288,16 @@
 				B0BEE14FE94F0274B6AF8EFF /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		869D644125B733FD006F504C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				9CD955E3259F78010027B07C /* ModuleTests.swift */,
+				9CD955E4259F78010027B07C /* PresenterTests.swift */,
+				9CD955E5259F78010027B07C /* RouterTests.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 		9C7C851A259393A600C4992B /* Modules */ = {

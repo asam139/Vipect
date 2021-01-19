@@ -11,20 +11,14 @@ import Vipect
 import RxSwift
 import RxCocoa
 
+
 final class HomePresenter: Presenter {
+    private var disposeBag = DisposeBag()
     private let messageSub = PublishRelay<String>()
 
-    override func bindLyfeCycle() {
-        super.bindLyfeCycle()
-
-        _view.lifeCycleObservable.subscribe(onNext: { [weak self] value in
-            switch value {
-            case .viewDidLoad:
-                self?.loadContent()
-            default:
-                return
-            }
-        }).disposed(by: disposeBag)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loadContent()
     }
 
     override func bindWithView() {
@@ -51,7 +45,7 @@ final class HomePresenter: Presenter {
     }
 }
 
-extension HomePresenter {
+extension HomePresenter {    
     func loadContent() {
         showLoading()
         interactor.someInteractorOperation()

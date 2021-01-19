@@ -31,8 +31,6 @@ TODO: Add long description of the pod here.
   
   s.source_files = 'Vipect/Classes/**/*.swift'
   s.weak_framework = 'SwiftUI'
-  s.dependency 'RxSwift', '~> 6.0'
-  s.dependency 'RxCocoa', '~> 6.0'
 
   s.pod_target_xcconfig = {
     'OTHER_SWIFT_FLAGS[config=Debug]' => '-Xfrontend -warn-long-function-bodies=200 -Xfrontend -warn-long-expression-type-checking=200',
