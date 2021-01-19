@@ -23,37 +23,37 @@ class PresenterTests: QuickSpec {
                 expect(presenter.isCalled).toEventually(equal(true))
             }
 
-            it("observes view did loaded") {
+            it("knowns when the view did loaded") {
                 expectViewLifecycle(method: kViewDidLoaded) {
                     $0.viewDidLoad()
                 }
             }
 
-            it("observes view will appear") {
+            it("knowns when the view will appear") {
                 expectViewLifecycle(method: kViewWillAppear) {
                     $0.viewWillAppear(true)
                 }
             }
 
-            it("observes view did appear") {
+            it("knowns when the view did appear") {
                 expectViewLifecycle(method: kViewDidAppear) {
                     $0.viewDidAppear(true)
                 }
             }
 
-            it("observes view will disappear") {
+            it("knowns when the view will disappear") {
                 expectViewLifecycle(method: kViewWillDisappear) {
                     $0.viewWillDisappear(true)
                 }
             }
 
-            it("observes view did disappear") {
+            it("knowns when the view did disappear") {
                 expectViewLifecycle(method: kViewDidDisappear) {
                     $0.viewDidDisappear(true)
                 }
             }
 
-            it("can setup view") {
+            it("knowns when the view can be setup") {
                 expectViewLifecycle(method: kSetUpView) {
                     $0.viewDidLoad()
                 }

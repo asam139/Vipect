@@ -15,7 +15,12 @@ public class HostingUserInterface<Content: View>: UIHostingController<Content>, 
         super.init(nibName: nil, bundle: nil)
     }
 
-    public var _presenter: PresenterProtocol!
+    public var _presenter: PresenterProtocol! {
+        didSet {
+            setUpView()
+            _presenter.viewDidLoad()
+        }
+    }
     public var viewController: UIViewController { self }
 
     public override required init(rootView: Content) {
@@ -24,12 +29,6 @@ public class HostingUserInterface<Content: View>: UIHostingController<Content>, 
 
     @objc required dynamic init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-
-    open override func viewDidLoad() {
-        super.viewDidLoad()
-        setUpView()
-        _presenter.viewDidLoad()
     }
 
     open override func viewWillAppear(_ animated: Bool) {

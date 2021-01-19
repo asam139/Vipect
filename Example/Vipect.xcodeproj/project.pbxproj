@@ -10,6 +10,10 @@
 		21A0D0ABF36669FA9E546ACA /* Pods_Vipect_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53032F75354972BD8EF23190 /* Pods_Vipect_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
+		869D644325B73457006F504C /* UserInterfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869D644225B73457006F504C /* UserInterfaceTests.swift */; };
+		869D644925B73651006F504C /* CollectionUserInterfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869D644825B73651006F504C /* CollectionUserInterfaceTests.swift */; };
+		869D644D25B7366A006F504C /* SplitUserInterfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869D644C25B7366A006F504C /* SplitUserInterfaceTests.swift */; };
+		869D645125B738E5006F504C /* HostingUserInterfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869D645025B738E5006F504C /* HostingUserInterfaceTests.swift */; };
 		9C7C8502259391DA00C4992B /* AppModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C8501259391DA00C4992B /* AppModules.swift */; };
 		9C7C8546259393A600C4992B /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C851C259393A600C4992B /* HomeInteractor.swift */; };
 		9C7C8547259393A600C4992B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C851D259393A600C4992B /* HomeView.swift */; };
@@ -110,6 +114,10 @@
 		607FACE51AFB9204008FA782 /* Vipect_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Vipect_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79209EE162C477A8DC180C81 /* Pods-Vipect_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vipect_Example.release.xcconfig"; path = "Target Support Files/Pods-Vipect_Example/Pods-Vipect_Example.release.xcconfig"; sourceTree = "<group>"; };
+		869D644225B73457006F504C /* UserInterfaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserInterfaceTests.swift; path = ../../../../Vipect/Example/Tests/Core/UserInterfaceTests.swift; sourceTree = "<group>"; };
+		869D644825B73651006F504C /* CollectionUserInterfaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionUserInterfaceTests.swift; path = ../../../../Vipect/Example/Tests/Core/CollectionUserInterfaceTests.swift; sourceTree = "<group>"; };
+		869D644C25B7366A006F504C /* SplitUserInterfaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SplitUserInterfaceTests.swift; path = ../../../../Vipect/Example/Tests/Core/SplitUserInterfaceTests.swift; sourceTree = "<group>"; };
+		869D645025B738E5006F504C /* HostingUserInterfaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HostingUserInterfaceTests.swift; path = ../../../../Vipect/Example/Tests/Core/HostingUserInterfaceTests.swift; sourceTree = "<group>"; };
 		96D69F6F7B53EF43B5885360 /* Pods_Vipect_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vipect_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C7C8501259391DA00C4992B /* AppModules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModules.swift; sourceTree = "<group>"; };
 		9C7C851C259393A600C4992B /* HomeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
@@ -296,6 +304,10 @@
 				9CD955E3259F78010027B07C /* ModuleTests.swift */,
 				9CD955E4259F78010027B07C /* PresenterTests.swift */,
 				9CD955E5259F78010027B07C /* RouterTests.swift */,
+				869D644225B73457006F504C /* UserInterfaceTests.swift */,
+				869D644825B73651006F504C /* CollectionUserInterfaceTests.swift */,
+				869D644C25B7366A006F504C /* SplitUserInterfaceTests.swift */,
+				869D645025B738E5006F504C /* HostingUserInterfaceTests.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -780,6 +792,7 @@
 			files = (
 				9CD9561D259F78010027B07C /* SwiftUIWithEnvPresenter.swift in Sources */,
 				9CD9562A259F78020027B07C /* CodeModuleModuleApi.swift in Sources */,
+				869D644925B73651006F504C /* CollectionUserInterfaceTests.swift in Sources */,
 				9CD9561B259F78010027B07C /* SwiftUIWithEnvInteractor.swift in Sources */,
 				9CD95614259F78010027B07C /* XibModuleInteractor.swift in Sources */,
 				9CD9565225A0AE2E0027B07C /* StringTests.swift in Sources */,
@@ -789,10 +802,12 @@
 				9CD95625259F78020027B07C /* SampleView.swift in Sources */,
 				9CD9561C259F78010027B07C /* SwiftUIWithEnvView.swift in Sources */,
 				9CD9562C259F78020027B07C /* SwiftUIInteractor.swift in Sources */,
+				869D644325B73457006F504C /* UserInterfaceTests.swift in Sources */,
 				9CD9566B25A0C2730027B07C /* Utils.swift in Sources */,
 				9CD95624259F78020027B07C /* SampleRouter.swift in Sources */,
 				9CD95621259F78020027B07C /* SampleViewPad.swift in Sources */,
 				9CD9562B259F78020027B07C /* CodeModulePresenter.swift in Sources */,
+				869D644D25B7366A006F504C /* SplitUserInterfaceTests.swift in Sources */,
 				9CD95620259F78020027B07C /* SamplePresenter.swift in Sources */,
 				9CD95611259F78010027B07C /* TestModules.swift in Sources */,
 				9CD9565825A0C1BC0027B07C /* MockPresenter.swift in Sources */,
@@ -800,6 +815,7 @@
 				9CD9562E259F78020027B07C /* SwiftUIView.swift in Sources */,
 				9CD95615259F78010027B07C /* XibModuleRouter.swift in Sources */,
 				9CD9566625A0C2140027B07C /* MockInteractor.swift in Sources */,
+				869D645125B738E5006F504C /* HostingUserInterfaceTests.swift in Sources */,
 				9CD95630259F78020027B07C /* SwiftUIRouter.swift in Sources */,
 				9CD95612259F78010027B07C /* TestCleanModules.swift in Sources */,
 				9CD9560E259F78010027B07C /* ModuleTests.swift in Sources */,

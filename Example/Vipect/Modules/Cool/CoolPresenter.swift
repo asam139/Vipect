@@ -12,6 +12,11 @@ import Vipect
 // MARK: - CoolPresenter Class
 final class CoolPresenter: Presenter {
     var _viewModel: UserSettings!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
 }
 
 // MARK: - CoolPresenter API
