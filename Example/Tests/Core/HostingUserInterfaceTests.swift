@@ -35,7 +35,7 @@ class HostingUserInterfaceTests: QuickSpec {
             it("conformas with UserInterface protocol") {
                 expect {
                     _ = HostingUserInterface<Text>()
-                }.to(throwError())
+                }.to(throwAssertion())
             }
 
             it("calls viewDidLoaded in presenter") {

@@ -11,6 +11,8 @@ import SwiftUI
 
 @available(iOS 13.0, *)
 public class HostingUserInterface<Content: View>: UIHostingController<Content>, UserInterfaceProtocol {
+    // Method created only to conform UserInterfaceProtocol.
+    // This initializer crashes because UIHostingController don't support it.
     public required init() {
         super.init(nibName: nil, bundle: nil)
     }
