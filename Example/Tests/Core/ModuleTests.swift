@@ -9,7 +9,8 @@
 import XCTest
 import Quick
 import Nimble
-import Vipect
+@testable import Vipect
+import Swinject
 
 class ModuleTests: QuickSpec {
     override func spec() {
@@ -84,7 +85,7 @@ class ModuleTests: QuickSpec {
 
             it("can inject a mock presenter") {
                 var module = createTestModule()
-                let mockPresenter = MockPresenter()
+                let mockPresenter = MockPresenter(container: Container())
                 module.injectMock(presenter: mockPresenter)
 
                 //Assert new injected dependencies
@@ -104,7 +105,7 @@ class ModuleTests: QuickSpec {
 
             it("can inject a mock interactor") {
                 var module = createTestModule()
-                let mockInteractor = MockInteractor()
+                let mockInteractor = MockInteractor(container: Container())
                 module.injectMock(interactor: mockInteractor)
 
                 let i = module.interactor
@@ -117,7 +118,7 @@ class ModuleTests: QuickSpec {
 
             it("can inject a mock router") {
                 var module = createTestModule()
-                let mockRouter = MockRouter()
+                let mockRouter = MockRouter(container: Container())
                 module.injectMock(router: mockRouter)
 
                 let p = module.presenter
@@ -141,6 +142,47 @@ class ModuleTests: QuickSpec {
             it("builds a module by default") {
                 let module = TestCleanModules.sample.build(bundle: testBundle, deviceType: .phone)
                 expect(module.view is SampleView) == true
+            }
+
+            it("deinits") {
+                let container = Container()
+                var module: Module! = createTestModule()
+
+                var viewIsDeallocated = false
+                var mockView: MockView! = MockView()
+                mockView.deinitCalled = { viewIsDeallocated = true }
+                module.injectMock(view: mockView)
+                mockView = nil
+
+                var presenterIsDeallocated = false
+                var mockPresenter: MockPresenter! = MockPresenter(container: container)
+                mockPresenter.deinitCalled = { presenterIsDeallocated = true }
+                module.injectMock(presenter: mockPresenter)
+                mockPresenter = nil
+
+                var interactorIsDeallocated = false
+                var mockInteractor: MockInteractor! = MockInteractor(container: container)
+                mockInteractor.deinitCalled = { interactorIsDeallocated = true }
+                module.injectMock(interactor: mockInteractor)
+                mockInteractor = nil
+
+                var routerIsDeallocated = false
+                var mockRouter: MockRouter! = MockRouter(container: container)
+                mockRouter.deinitCalled = { routerIsDeallocated = true }
+                module.injectMock(router: mockRouter)
+                mockRouter = nil
+
+                // Simulate deallocation
+                module.injectMock(interactor: MockInteractor(container: container))
+                module.injectMock(presenter: MockPresenter(container: container))
+                module.injectMock(router: MockRouter(container: container))
+                module.injectMock(view: UserInterface())
+                module = nil
+
+                expect(viewIsDeallocated).toEventually(beTrue())
+                expect(presenterIsDeallocated).toEventually(beTrue())
+                expect(interactorIsDeallocated).toEventually(beTrue())
+                expect(routerIsDeallocated).toEventually(beTrue())
             }
         }
     }

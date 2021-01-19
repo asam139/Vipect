@@ -10,4 +10,10 @@ import Vipect
 
 enum TestCleanModules: String, ViperModule {
     case sample
+
+    var viewType: ViperViewType {
+        switch self {
+        case .sample: return .storyboard
+        }
+    }
 }

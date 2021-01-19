@@ -8,4 +8,7 @@
 
 import Vipect
 
-class MockRouter: Router {}
+class MockRouter: Router {
+    var deinitCalled: (() -> Void)?
+    deinit { deinitCalled?() }
+}

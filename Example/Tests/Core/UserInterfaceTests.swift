@@ -9,6 +9,7 @@
 import Quick
 import Nimble
 import Vipect
+import Swinject
 
 class UserInterfaceTests: QuickSpec {
     override func spec() {
@@ -18,7 +19,7 @@ class UserInterfaceTests: QuickSpec {
 
             beforeEach {
                 userInterface = UserInterface()
-                presenter = MockPresenter()
+                presenter = MockPresenter(container: Container())
                 userInterface._presenter = presenter
             }
 
@@ -27,7 +28,7 @@ class UserInterfaceTests: QuickSpec {
                 // Simulate view lifecycle
                 simulate?(userInterface.viewController)
 
-                expect(presenter.isCalled).toEventually(equal(true))
+                expect(presenter.isCalled).toEventually(beTrue())
             }
 
             it("calls viewDidLoaded in presenter") {

@@ -8,4 +8,7 @@
 
 import Vipect
 
-class MockInteractor: Interactor {}
+class MockInteractor: Interactor {
+    var deinitCalled: (() -> Void)?
+    deinit { deinitCalled?() }
+}

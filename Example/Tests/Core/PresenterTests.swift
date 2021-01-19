@@ -20,7 +20,7 @@ class PresenterTests: QuickSpec {
                 // Simulate view lifecycle
                 simulate?(module.view.viewController)
 
-                expect(presenter.isCalled).toEventually(equal(true))
+                expect(presenter.isCalled).toEventually(beTrue())
             }
 
             it("knowns when the view did loaded") {

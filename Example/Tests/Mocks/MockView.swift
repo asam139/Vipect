@@ -8,4 +8,7 @@
 
 import Vipect
 
-class MockView: UserInterface {}
+class MockView: UserInterface {
+    var deinitCalled: (() -> Void)?
+    deinit { deinitCalled?() }
+}

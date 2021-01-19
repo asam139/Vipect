@@ -58,4 +58,7 @@ class MockPresenter: Presenter, SamplePresenterInterface {
         super.setUpView()
         called(method: kSetUpView)
     }
+
+    var deinitCalled: (() -> Void)?
+    deinit { deinitCalled?() }
 }

@@ -7,13 +7,13 @@
 //
 
 import Vipect
-
+import Swinject
 
 let testBundle = Bundle(for: SampleRouter.self)
 
 func createTestModuleWithMockPresenter(methodToTest: String) -> Module {
     var module = TestModules.sample.build(bundle: Bundle(for: SampleRouter.self))
-    let mockPresenter = MockPresenter()
+    let mockPresenter = MockPresenter(container: Container())
     mockPresenter.methodExpected = methodToTest
     module.injectMock(presenter: mockPresenter)
     return module

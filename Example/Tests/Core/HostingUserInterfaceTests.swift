@@ -12,6 +12,7 @@ import Vipect
 #if canImport(SwiftUI)
 import SwiftUI
 #endif
+import Swinject
 
 @available(iOS 13.0, *)
 class HostingUserInterfaceTests: QuickSpec {
@@ -25,14 +26,14 @@ class HostingUserInterfaceTests: QuickSpec {
             }
 
             func expectViewLifecycle(method: String, simulate: ((UIViewController) -> Void)? = nil) {
-                presenter = MockPresenter()
+                presenter = MockPresenter(container: Container())
                 presenter.methodExpected = method
                 userInterface._presenter = presenter
 
                 // Simulate view lifecycle
                 simulate?(userInterface.viewController)
 
-                expect(presenter.isCalled).toEventually(equal(true))
+                expect(presenter.isCalled).toEventually(beTrue())
             }
 
             it("conformas with UserInterface protocol") {
