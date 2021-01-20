@@ -6,7 +6,7 @@
 //  ___COPYRIGHT___
 //
 
-import MeepVIPER
+import Vipect
 
 // MARK: - ___VARIABLE_ViperitModuleName___Router API
 protocol ___VARIABLE_ViperitModuleName___RouterApi: RouterProtocol {

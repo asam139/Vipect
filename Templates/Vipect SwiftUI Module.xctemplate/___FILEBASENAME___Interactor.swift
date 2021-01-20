@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import MeepVIPER
+import Vipect
 
 // MARK: - ___VARIABLE_ViperitModuleName___Interactor Class
 final class ___VARIABLE_ViperitModuleName___Interactor: Interactor {

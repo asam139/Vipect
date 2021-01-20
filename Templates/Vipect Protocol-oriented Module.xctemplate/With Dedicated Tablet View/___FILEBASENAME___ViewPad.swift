@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MeepVIPER
+import Vipect
 
 // MARK: ___VARIABLE_ViperitModuleName___ViewPad Class (For Tablets Only)
 final class ___FILEBASENAMEASIDENTIFIER___ViewPad: UserInterface {

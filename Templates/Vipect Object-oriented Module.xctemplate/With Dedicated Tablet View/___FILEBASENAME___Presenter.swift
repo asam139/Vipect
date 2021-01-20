@@ -7,9 +7,7 @@
 //
 
 import Foundation
-import RxSwift
-import RxCocoa
-import MeepVIPER
+import Vipect
 
 class ___VARIABLE_ViperitModuleName___Presenter: Presenter {
 	override func bindWithView() {
@@ -27,7 +25,7 @@ class ___VARIABLE_ViperitModuleName___Presenter: Presenter {
     }
 
     func bindInput(_ input: ___VARIABLE_ViperitModuleName___ViewInput) {
-        input.action.drive { _ in }.disposed(by: disposeBag)
+        //input.action...
     }
 }
 

@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import MeepVIPER
-import RxCocoa
+import Vipect
 
 // MARK: - ___VARIABLE_ViperitModuleName___ViewOutput
 struct ___VARIABLE_ViperitModuleName___ViewOutput {

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MeepVIPER
+import Vipect
 
 // MARK: - Public Interface Protocol
 protocol ___FILEBASENAMEASIDENTIFIER___ViewInterface {

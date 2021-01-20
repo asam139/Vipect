@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import MeepVIPER
+import Vipect
 
 // MARK: - ___VARIABLE_ViperitModuleName___Presenter Class
 final class ___VARIABLE_ViperitModuleName___Presenter: Presenter {

@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import MeepVIPER
+import Vipect
 
 //MARK: ___VARIABLE_ViperitModuleName___View SwiftUI
 struct ___VARIABLE_ViperitModuleName___View : View {

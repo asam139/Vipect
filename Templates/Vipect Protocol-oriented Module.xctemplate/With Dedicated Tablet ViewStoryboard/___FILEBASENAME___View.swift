@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MeepVIPER
+import Vipect
 
 // MARK: ___VARIABLE_ViperitModuleName___View Class
 final class ___VARIABLE_ViperitModuleName___View: UserInterface {

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import MeepVIPER
+import Vipect
 
 class ___FILEBASENAMEASIDENTIFIER___Router: Router {
 }
