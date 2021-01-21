@@ -21,6 +21,13 @@ final class ___VARIABLE_ViperitModuleName___View: UserInterface {
 
 //MARK: - Public interface
 extension ___VARIABLE_ViperitModuleName___View: ___VARIABLE_ViperitModuleName___ViewInterface {
+	var input: ___VARIABLE_ViperitModuleName___ViewInput {
+        ___VARIABLE_ViperitModuleName___ViewInput()
+    }
+
+    func bindOutput(_ output: ___VARIABLE_ViperitModuleName___ViewOutput) {
+        
+    }
 }
 
 // MARK: - VIPER COMPONENTS API (Auto-generated code)

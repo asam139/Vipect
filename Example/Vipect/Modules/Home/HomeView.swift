@@ -12,13 +12,13 @@ import RxSwift
 import RxCocoa
 
 
-//MARK: - Public Interface Protocol
+// MARK: - Public Interface Protocol
 protocol HomeViewInterface {
     var input: HomeViewInput { get }
     func bindOutput(_ output: HomeViewOutput)
 }
 
-//MARK: Home View
+// MARK: Home View
 final class HomeView: UserInterface {
     private var disposeBag = DisposeBag()
     private let actionSubject = PublishRelay<HomeViewAction>()
@@ -30,7 +30,7 @@ final class HomeView: UserInterface {
     }
 }
 
-//MARK: - Public interface
+// MARK: - Public interface
 extension HomeView: HomeViewInterface {
     var input: HomeViewInput {
         HomeViewInput(action: actionSubject.asDriver(onErrorDriveWith: Driver.empty()))

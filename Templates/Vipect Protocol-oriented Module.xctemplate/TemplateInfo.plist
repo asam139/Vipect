@@ -55,15 +55,23 @@
 		</dict>
 		<dict>
 			<key>Identifier</key>
-			<string>Storyboard</string>
+			<string>fileType</string>
+			<key>Required</key>
+			<true/>
 			<key>Name</key>
-			<string>Also create a Storyboard file for module</string>
+			<string>View Type</string>
 			<key>Description</key>
-			<string>Whether to create a Storyboard file with the same name</string>
+			<string>Choose the way to implement the view</string>
 			<key>Type</key>
-			<string>checkbox</string>
+			<string>popup</string>
 			<key>Default</key>
-			<string>true</string>
+			<string>Code</string>
+			<key>Values</key>
+			<array>
+				<string>Code</string>
+				<string>Xib</string>
+				<string>Storyboard</string>
+			</array>
 			<key>NotPersisted</key>
 			<true/>
 		</dict>

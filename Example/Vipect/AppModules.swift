@@ -17,6 +17,7 @@ enum AppModules: String, ViperModule {
     case cool
     case simple
     case perfect
+    case qrScanner = "QRScanner"
 
     var viewType: ViperViewType {
         switch self {

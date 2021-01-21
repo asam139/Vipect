@@ -9,18 +9,18 @@
 import UIKit
 import Vipect
 
-// MARK: - Public Interface Protocol
-protocol ___FILEBASENAMEASIDENTIFIER___ViewInterface {
+//MARK: - Public Interface Protocol
+protocol ___VARIABLE_ViperitModuleName___ViewInterface {
 	var input: ___VARIABLE_ViperitModuleName___ViewInput { get }
 	func bindOutput(_ output: ___VARIABLE_ViperitModuleName___ViewOutput)
 }
 
-// MARK: ___FILEBASENAMEASIDENTIFIER___ View
-final class ___FILEBASENAMEASIDENTIFIER___View: UserInterface {
+//MARK: ___VARIABLE_ViperitModuleName___View Class
+final class ___VARIABLE_ViperitModuleName___View: UserInterface {
 }
 
-// MARK: - Public interface
-extension ___FILEBASENAMEASIDENTIFIER___View: ___FILEBASENAMEASIDENTIFIER___ViewInterface {
+//MARK: - Public interface
+extension ___VARIABLE_ViperitModuleName___View: ___VARIABLE_ViperitModuleName___ViewInterface {
 	var input: ___VARIABLE_ViperitModuleName___ViewInput {
         ___VARIABLE_ViperitModuleName___ViewInput()
     }
@@ -31,8 +31,8 @@ extension ___FILEBASENAMEASIDENTIFIER___View: ___FILEBASENAMEASIDENTIFIER___View
 }
 
 // MARK: - VIPER COMPONENTS API (Auto-generated code)
-private extension ___FILEBASENAMEASIDENTIFIER___View {
-    var presenter: ___FILEBASENAMEASIDENTIFIER___Presenter {
-        return _presenter as! ___FILEBASENAMEASIDENTIFIER___Presenter
+private extension ___VARIABLE_ViperitModuleName___View {
+    var presenter: ___VARIABLE_ViperitModuleName___Presenter {
+        return _presenter as! ___VARIABLE_ViperitModuleName___Presenter
     }
 }

@@ -21,7 +21,7 @@ class ___FILEBASENAMEASIDENTIFIER___Presenter: Presenter {
     }
 
     func transporm(input: ___VARIABLE_ViperitModuleName___ViewInput) -> ___VARIABLE_ViperitModuleName___ViewOutput {
-       
+        ___VARIABLE_ViperitModuleName___ViewOutput()
     }
 
     func bindInput(_ input: ___VARIABLE_ViperitModuleName___ViewInput) {
