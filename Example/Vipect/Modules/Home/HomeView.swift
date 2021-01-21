@@ -22,7 +22,7 @@ protocol HomeViewInterface {
 final class HomeView: UserInterface {
     private var disposeBag = DisposeBag()
     private let actionSubject = PublishRelay<HomeViewAction>()
-
+    
     @IBOutlet weak var messageLabel: UILabel!
 
     @IBAction func goToSecondModuleButtonPressed() {

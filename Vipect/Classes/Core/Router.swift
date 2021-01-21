@@ -129,8 +129,8 @@ public extension RouterProtocol {
         view.translatesAutoresizingMaskIntoConstraints = false
         let pinDirections: [NSLayoutConstraint.Attribute] = [.top, .bottom, .left, .right]
         let pinConstraints = pinDirections.map { direction -> NSLayoutConstraint in
-            return NSLayoutConstraint(item: view, attribute: direction, relatedBy: .equal,
-                                      toItem: holderView, attribute: direction, multiplier: 1.0, constant: 0)
+            NSLayoutConstraint(item: view, attribute: direction, relatedBy: .equal,
+                               toItem: holderView, attribute: direction, multiplier: 1.0, constant: 0)
         }
         holderView.addConstraints(pinConstraints)
     }

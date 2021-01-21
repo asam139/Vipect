@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		21A0D0ABF36669FA9E546ACA /* Pods_Vipect_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53032F75354972BD8EF23190 /* Pods_Vipect_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
+		861E259025BA072C00309D44 /* VIPER in Frameworks */ = {isa = PBXBuildFile; productRef = 861E258F25BA072C00309D44 /* VIPER */; };
 		869D644325B73457006F504C /* UserInterfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869D644225B73457006F504C /* UserInterfaceTests.swift */; };
 		869D644925B73651006F504C /* CollectionUserInterfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869D644825B73651006F504C /* CollectionUserInterfaceTests.swift */; };
 		869D644D25B7366A006F504C /* SplitUserInterfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869D644C25B7366A006F504C /* SplitUserInterfaceTests.swift */; };
@@ -20,33 +21,6 @@
 		9C7C8548259393A600C4992B /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C7C851E259393A600C4992B /* Home.storyboard */; };
 		9C7C8549259393A600C4992B /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C851F259393A600C4992B /* HomeRouter.swift */; };
 		9C7C854B259393A600C4992B /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C8521259393A600C4992B /* HomePresenter.swift */; };
-		9C7C854C259393A600C4992B /* PerfectRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C8523259393A600C4992B /* PerfectRouter.swift */; };
-		9C7C854D259393A600C4992B /* PerfectInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C8524259393A600C4992B /* PerfectInteractor.swift */; };
-		9C7C854E259393A600C4992B /* PerfectModuleApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C8525259393A600C4992B /* PerfectModuleApi.swift */; };
-		9C7C854F259393A600C4992B /* PerfectPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C8526259393A600C4992B /* PerfectPresenter.swift */; };
-		9C7C8550259393A600C4992B /* PerfectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C8527259393A600C4992B /* PerfectView.swift */; };
-		9C7C8551259393A600C4992B /* SecondRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C8529259393A600C4992B /* SecondRouter.swift */; };
-		9C7C8552259393A600C4992B /* Second.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C7C852A259393A600C4992B /* Second.storyboard */; };
-		9C7C8553259393A600C4992B /* SecondViewPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C852B259393A600C4992B /* SecondViewPad.swift */; };
-		9C7C8554259393A600C4992B /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C852C259393A600C4992B /* SecondView.swift */; };
-		9C7C8555259393A600C4992B /* SecondPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C852D259393A600C4992B /* SecondPresenter.swift */; };
-		9C7C8556259393A600C4992B /* SecondInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C852E259393A600C4992B /* SecondInteractor.swift */; };
-		9C7C8559259393A600C4992B /* SimpleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C8532259393A600C4992B /* SimpleView.swift */; };
-		9C7C855A259393A600C4992B /* SimpleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C8533259393A600C4992B /* SimpleInteractor.swift */; };
-		9C7C855B259393A600C4992B /* SimplePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C8534259393A600C4992B /* SimplePresenter.swift */; };
-		9C7C855C259393A600C4992B /* SimpleModuleApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C8535259393A600C4992B /* SimpleModuleApi.swift */; };
-		9C7C855D259393A600C4992B /* SimpleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C8536259393A600C4992B /* SimpleRouter.swift */; };
-		9C7C855E259393A600C4992B /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C8539259393A600C4992B /* UserSettings.swift */; };
-		9C7C855F259393A600C4992B /* CoolRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C853A259393A600C4992B /* CoolRouter.swift */; };
-		9C7C8560259393A600C4992B /* CoolPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C853B259393A600C4992B /* CoolPresenter.swift */; };
-		9C7C8561259393A600C4992B /* CoolInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C853C259393A600C4992B /* CoolInteractor.swift */; };
-		9C7C8562259393A600C4992B /* CoolModuleApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C853D259393A600C4992B /* CoolModuleApi.swift */; };
-		9C7C8563259393A600C4992B /* CoolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C853E259393A600C4992B /* CoolView.swift */; };
-		9C7C8564259393A600C4992B /* TableOfContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C8540259393A600C4992B /* TableOfContentsView.swift */; };
-		9C7C8565259393A600C4992B /* TableOfContentsModuleApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C8541259393A600C4992B /* TableOfContentsModuleApi.swift */; };
-		9C7C8566259393A600C4992B /* TableOfContentsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C8542259393A600C4992B /* TableOfContentsPresenter.swift */; };
-		9C7C8567259393A600C4992B /* TableOfContentsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C8543259393A600C4992B /* TableOfContentsInteractor.swift */; };
-		9C7C8569259393A600C4992B /* TableOfContentsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C8545259393A600C4992B /* TableOfContentsRouter.swift */; };
 		9CD955D52598D8F40027B07C /* HomeViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD955D42598D8F40027B07C /* HomeViewOutput.swift */; };
 		9CD955DB2598D90D0027B07C /* HomeViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD955DA2598D90D0027B07C /* HomeViewInput.swift */; };
 		9CD9560E259F78010027B07C /* ModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD955E3259F78010027B07C /* ModuleTests.swift */; };
@@ -125,33 +99,6 @@
 		9C7C851E259393A600C4992B /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		9C7C851F259393A600C4992B /* HomeRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		9C7C8521259393A600C4992B /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
-		9C7C8523259393A600C4992B /* PerfectRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfectRouter.swift; sourceTree = "<group>"; };
-		9C7C8524259393A600C4992B /* PerfectInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfectInteractor.swift; sourceTree = "<group>"; };
-		9C7C8525259393A600C4992B /* PerfectModuleApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfectModuleApi.swift; sourceTree = "<group>"; };
-		9C7C8526259393A600C4992B /* PerfectPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfectPresenter.swift; sourceTree = "<group>"; };
-		9C7C8527259393A600C4992B /* PerfectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfectView.swift; sourceTree = "<group>"; };
-		9C7C8529259393A600C4992B /* SecondRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondRouter.swift; sourceTree = "<group>"; };
-		9C7C852A259393A600C4992B /* Second.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Second.storyboard; sourceTree = "<group>"; };
-		9C7C852B259393A600C4992B /* SecondViewPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewPad.swift; sourceTree = "<group>"; };
-		9C7C852C259393A600C4992B /* SecondView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
-		9C7C852D259393A600C4992B /* SecondPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondPresenter.swift; sourceTree = "<group>"; };
-		9C7C852E259393A600C4992B /* SecondInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondInteractor.swift; sourceTree = "<group>"; };
-		9C7C8532259393A600C4992B /* SimpleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleView.swift; sourceTree = "<group>"; };
-		9C7C8533259393A600C4992B /* SimpleInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleInteractor.swift; sourceTree = "<group>"; };
-		9C7C8534259393A600C4992B /* SimplePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimplePresenter.swift; sourceTree = "<group>"; };
-		9C7C8535259393A600C4992B /* SimpleModuleApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleModuleApi.swift; sourceTree = "<group>"; };
-		9C7C8536259393A600C4992B /* SimpleRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleRouter.swift; sourceTree = "<group>"; };
-		9C7C8539259393A600C4992B /* UserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
-		9C7C853A259393A600C4992B /* CoolRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoolRouter.swift; sourceTree = "<group>"; };
-		9C7C853B259393A600C4992B /* CoolPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoolPresenter.swift; sourceTree = "<group>"; };
-		9C7C853C259393A600C4992B /* CoolInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoolInteractor.swift; sourceTree = "<group>"; };
-		9C7C853D259393A600C4992B /* CoolModuleApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoolModuleApi.swift; sourceTree = "<group>"; };
-		9C7C853E259393A600C4992B /* CoolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoolView.swift; sourceTree = "<group>"; };
-		9C7C8540259393A600C4992B /* TableOfContentsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableOfContentsView.swift; sourceTree = "<group>"; };
-		9C7C8541259393A600C4992B /* TableOfContentsModuleApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableOfContentsModuleApi.swift; sourceTree = "<group>"; };
-		9C7C8542259393A600C4992B /* TableOfContentsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableOfContentsPresenter.swift; sourceTree = "<group>"; };
-		9C7C8543259393A600C4992B /* TableOfContentsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableOfContentsInteractor.swift; sourceTree = "<group>"; };
-		9C7C8545259393A600C4992B /* TableOfContentsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableOfContentsRouter.swift; sourceTree = "<group>"; };
 		9CD955D42598D8F40027B07C /* HomeViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewOutput.swift; sourceTree = "<group>"; };
 		9CD955DA2598D90D0027B07C /* HomeViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewInput.swift; sourceTree = "<group>"; };
 		9CD955E3259F78010027B07C /* ModuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleTests.swift; sourceTree = "<group>"; };
@@ -201,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21A0D0ABF36669FA9E546ACA /* Pods_Vipect_Example.framework in Frameworks */,
+				861E259025BA072C00309D44 /* VIPER in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,11 +264,6 @@
 			isa = PBXGroup;
 			children = (
 				9C7C851B259393A600C4992B /* Home */,
-				9C7C8522259393A600C4992B /* Perfect */,
-				9C7C8528259393A600C4992B /* Second */,
-				9C7C8530259393A600C4992B /* Simple */,
-				9C7C8537259393A600C4992B /* Cool */,
-				9C7C853F259393A600C4992B /* TableOfContents */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -337,76 +280,6 @@
 				9CD955DA2598D90D0027B07C /* HomeViewInput.swift */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		9C7C8522259393A600C4992B /* Perfect */ = {
-			isa = PBXGroup;
-			children = (
-				9C7C8523259393A600C4992B /* PerfectRouter.swift */,
-				9C7C8524259393A600C4992B /* PerfectInteractor.swift */,
-				9C7C8525259393A600C4992B /* PerfectModuleApi.swift */,
-				9C7C8526259393A600C4992B /* PerfectPresenter.swift */,
-				9C7C8527259393A600C4992B /* PerfectView.swift */,
-			);
-			path = Perfect;
-			sourceTree = "<group>";
-		};
-		9C7C8528259393A600C4992B /* Second */ = {
-			isa = PBXGroup;
-			children = (
-				9C7C8529259393A600C4992B /* SecondRouter.swift */,
-				9C7C852A259393A600C4992B /* Second.storyboard */,
-				9C7C852B259393A600C4992B /* SecondViewPad.swift */,
-				9C7C852C259393A600C4992B /* SecondView.swift */,
-				9C7C852D259393A600C4992B /* SecondPresenter.swift */,
-				9C7C852E259393A600C4992B /* SecondInteractor.swift */,
-			);
-			path = Second;
-			sourceTree = "<group>";
-		};
-		9C7C8530259393A600C4992B /* Simple */ = {
-			isa = PBXGroup;
-			children = (
-				9C7C8532259393A600C4992B /* SimpleView.swift */,
-				9C7C8533259393A600C4992B /* SimpleInteractor.swift */,
-				9C7C8534259393A600C4992B /* SimplePresenter.swift */,
-				9C7C8535259393A600C4992B /* SimpleModuleApi.swift */,
-				9C7C8536259393A600C4992B /* SimpleRouter.swift */,
-			);
-			path = Simple;
-			sourceTree = "<group>";
-		};
-		9C7C8537259393A600C4992B /* Cool */ = {
-			isa = PBXGroup;
-			children = (
-				9C7C8538259393A600C4992B /* viewModels */,
-				9C7C853A259393A600C4992B /* CoolRouter.swift */,
-				9C7C853B259393A600C4992B /* CoolPresenter.swift */,
-				9C7C853C259393A600C4992B /* CoolInteractor.swift */,
-				9C7C853D259393A600C4992B /* CoolModuleApi.swift */,
-				9C7C853E259393A600C4992B /* CoolView.swift */,
-			);
-			path = Cool;
-			sourceTree = "<group>";
-		};
-		9C7C8538259393A600C4992B /* viewModels */ = {
-			isa = PBXGroup;
-			children = (
-				9C7C8539259393A600C4992B /* UserSettings.swift */,
-			);
-			path = viewModels;
-			sourceTree = "<group>";
-		};
-		9C7C853F259393A600C4992B /* TableOfContents */ = {
-			isa = PBXGroup;
-			children = (
-				9C7C8540259393A600C4992B /* TableOfContentsView.swift */,
-				9C7C8541259393A600C4992B /* TableOfContentsModuleApi.swift */,
-				9C7C8542259393A600C4992B /* TableOfContentsPresenter.swift */,
-				9C7C8543259393A600C4992B /* TableOfContentsInteractor.swift */,
-				9C7C8545259393A600C4992B /* TableOfContentsRouter.swift */,
-			);
-			path = TableOfContents;
 			sourceTree = "<group>";
 		};
 		9CD955E6259F78010027B07C /* Sample */ = {
@@ -548,6 +421,9 @@
 			dependencies = (
 			);
 			name = Vipect_Example;
+			packageProductDependencies = (
+				861E258F25BA072C00309D44 /* VIPER */,
+			);
 			productName = MeepVIPER;
 			productReference = 607FACD01AFB9204008FA782 /* Vipect_Example.app */;
 			productType = "com.apple.product-type.application";
@@ -603,6 +479,9 @@
 				Base,
 			);
 			mainGroup = 607FACC71AFB9204008FA782;
+			packageReferences = (
+				861E258E25BA072C00309D44 /* XCRemoteSwiftPackageReference "VIPER" */,
+			);
 			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -618,7 +497,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C7C8552259393A600C4992B /* Second.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				9C7C8548259393A600C4992B /* Home.storyboard in Resources */,
 			);
@@ -751,40 +629,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C7C855D259393A600C4992B /* SimpleRouter.swift in Sources */,
-				9C7C854C259393A600C4992B /* PerfectRouter.swift in Sources */,
-				9C7C8551259393A600C4992B /* SecondRouter.swift in Sources */,
 				9C7C854B259393A600C4992B /* HomePresenter.swift in Sources */,
-				9C7C8565259393A600C4992B /* TableOfContentsModuleApi.swift in Sources */,
-				9C7C854E259393A600C4992B /* PerfectModuleApi.swift in Sources */,
-				9C7C8555259393A600C4992B /* SecondPresenter.swift in Sources */,
 				9C7C8546259393A600C4992B /* HomeInteractor.swift in Sources */,
-				9C7C8561259393A600C4992B /* CoolInteractor.swift in Sources */,
-				9C7C8556259393A600C4992B /* SecondInteractor.swift in Sources */,
 				9C7C8547259393A600C4992B /* HomeView.swift in Sources */,
-				9C7C855C259393A600C4992B /* SimpleModuleApi.swift in Sources */,
-				9C7C8554259393A600C4992B /* SecondView.swift in Sources */,
-				9C7C854D259393A600C4992B /* PerfectInteractor.swift in Sources */,
-				9C7C8566259393A600C4992B /* TableOfContentsPresenter.swift in Sources */,
-				9C7C8563259393A600C4992B /* CoolView.swift in Sources */,
 				9CD955DB2598D90D0027B07C /* HomeViewInput.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				9C7C8502259391DA00C4992B /* AppModules.swift in Sources */,
-				9C7C8567259393A600C4992B /* TableOfContentsInteractor.swift in Sources */,
-				9C7C8559259393A600C4992B /* SimpleView.swift in Sources */,
-				9C7C8562259393A600C4992B /* CoolModuleApi.swift in Sources */,
-				9C7C8550259393A600C4992B /* PerfectView.swift in Sources */,
-				9C7C8553259393A600C4992B /* SecondViewPad.swift in Sources */,
-				9C7C8560259393A600C4992B /* CoolPresenter.swift in Sources */,
-				9C7C8569259393A600C4992B /* TableOfContentsRouter.swift in Sources */,
-				9C7C854F259393A600C4992B /* PerfectPresenter.swift in Sources */,
 				9C7C8549259393A600C4992B /* HomeRouter.swift in Sources */,
-				9C7C8564259393A600C4992B /* TableOfContentsView.swift in Sources */,
-				9C7C855B259393A600C4992B /* SimplePresenter.swift in Sources */,
-				9C7C855F259393A600C4992B /* CoolRouter.swift in Sources */,
 				9CD955D52598D8F40027B07C /* HomeViewOutput.swift in Sources */,
-				9C7C855A259393A600C4992B /* SimpleInteractor.swift in Sources */,
-				9C7C855E259393A600C4992B /* UserSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -952,7 +804,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -964,7 +817,10 @@
 			buildSettings = {
 				INFOPLIST_FILE = Vipect/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -979,7 +835,10 @@
 			buildSettings = {
 				INFOPLIST_FILE = Vipect/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1003,7 +862,11 @@
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1024,7 +887,11 @@
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -1064,6 +931,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		861E258E25BA072C00309D44 /* XCRemoteSwiftPackageReference "VIPER" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/thomverbeek/VIPER";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		861E258F25BA072C00309D44 /* VIPER */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 861E258E25BA072C00309D44 /* XCRemoteSwiftPackageReference "VIPER" */;
+			productName = VIPER;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 607FACC81AFB9204008FA782 /* Project object */;
 }

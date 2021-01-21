@@ -17,9 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         let myContainer = Container()
-        let module = AppModules.qrScanner.build(container: myContainer)
-
-        module.router.show(inWindow: window, embedInNavController: true, makeKeyAndVisible: true)
+        let module = HomeModule.build(container: myContainer)
+    
+        //module.router.show(inWindow: window, embedInNavController: true, makeKeyAndVisible: true)
         return true
     }
 }

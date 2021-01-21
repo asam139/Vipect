@@ -9,22 +9,29 @@
 import Foundation
 import Vipect
 
-//MARK: - Application modules
-enum AppModules: String, ViperModule {
-    case home
-    case second
-    case tableOfContents
-    case cool
-    case simple
-    case perfect
-    case qrScanner = "QRScanner"
+////MARK: - Application modules
+//enum AppModules: String, ViperModule {
+//    case home
+//
+//    var viewType: ViperViewType {
+//        switch self {
+//        case .home: return .storyboard
+//        }
+//    }
+//}
 
-    var viewType: ViperViewType {
-        switch self {
-        case .cool, .perfect: return .swiftUI
-        case .tableOfContents: return .code
-        case .simple: return .code
-        default: return .storyboard
-        }
-    }
+class HomeModule: ViperModule {
+    static var viewType: ViperViewType = .storyboard
+    
+    static var viewName: String = "home"
+    
+    typealias I = HomeInteractor
+    
+    typealias V = HomeView
+    
+    typealias P = HomePresenter
+    
+    typealias R = HomeRouter
+    
+
 }

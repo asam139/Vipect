@@ -18,43 +18,52 @@ public protocol ViperComponentDI: ViperComponent {
 }
 
 // MARK: - Module
-public struct Module {
-    public private(set) var view: UserInterfaceProtocol
-    public private(set) var interactor: InteractorProtocol
-    public private(set) var presenter: PresenterProtocol
-    public private(set) var router: RouterProtocol
+public struct Module<V: UserInterfaceProtocol, I: InteractorProtocol, P: PresenterProtocol, R: RouterProtocol> {
+    public private(set) var view: V
+    public private(set) var interactor: I
+    public private(set) var presenter: P
+    public private(set) var router: R
+    
+    init(view: V, interactor: I, presenter: P, router: R) {
+        self.view = view
+        self.interactor = interactor
+        self.presenter = presenter
+        self.router = router
+    }
 
-    static func build<T: RawRepresentable & ViperModule>(_ module: T, container: Container = Container(), bundle: Bundle = Bundle.main, deviceType: UIUserInterfaceIdiom? = nil) -> Module where T.RawValue == String {
+    static func build<T: ViperModule, V: UserInterfaceProtocol, I: InteractorProtocol, P: PresenterProtocol, R: RouterProtocol>(
+        _ module: T.Type, container: Container = Container(), bundle: Bundle = Bundle.main, deviceType: UIUserInterfaceIdiom? = nil
+    ) -> Module<V, I, P, R> {
         //Get class types
-        let interactorClass = module.classForViperComponent(.interactor, bundle: bundle) as! InteractorProtocol.Type
-        let presenterClass = module.classForViperComponent(.presenter, bundle: bundle) as! PresenterProtocol.Type
-        let routerClass = module.classForViperComponent(.router, bundle: bundle) as! RouterProtocol.Type
+        let interactorClass = classForViperComponent(moduleName: module.viewName, component: .interactor, bundle: bundle) as! I.Type
+        let presenterClass = classForViperComponent(moduleName: module.viewName, component: .presenter, bundle: bundle) as! P.Type
+        let routerClass = classForViperComponent(moduleName: module.viewName, component: .router, bundle: bundle) as! R.Type
 
         //Allocate VIPER components
-        let V = loadView(forModule: module, bundle: bundle, deviceType: deviceType)
+        let L = loadView(forModule: module, viewType: V.self, bundle: bundle, deviceType: deviceType)
         let I = interactorClass.init(container: container)
         let P = presenterClass.init(container: container)
         let R = routerClass.init(container: container)
 
-        return build(view: V, interactor: I, presenter: P, router: R)
+        return build(view: L, interactor: I, presenter: P, router: R)
     }
 }
 
 // MARK: - Inject Mock Components for Testing
 public extension Module {
-    mutating func injectMock(view mockView: UserInterfaceProtocol) {
+    mutating func injectMock(view mockView: V) {
         view = mockView
         view._presenter = presenter
         presenter._view = view
     }
 
-    mutating func injectMock(interactor mockInteractor: InteractorProtocol) {
+    mutating func injectMock(interactor mockInteractor: I) {
         interactor = mockInteractor
         interactor._presenter = presenter
         presenter._interactor = interactor
     }
 
-    mutating func injectMock(presenter mockPresenter: PresenterProtocol) {
+    mutating func injectMock(presenter mockPresenter: P) {
         presenter = mockPresenter
         presenter._view = view
         presenter._interactor = interactor
@@ -64,7 +73,7 @@ public extension Module {
         router._presenter = presenter
     }
 
-    mutating func injectMock(router mockRouter: RouterProtocol) {
+    mutating func injectMock(router mockRouter: R) {
         router = mockRouter
         router._presenter = presenter
         presenter._router = router
@@ -74,23 +83,25 @@ public extension Module {
 
 // MARK: - Helper Methods
 extension Module {
-    static func loadView<T: RawRepresentable & ViperModule>(forModule module: T, bundle: Bundle, deviceType: UIUserInterfaceIdiom? = nil) -> UserInterfaceProtocol where T.RawValue == String {
-        let viewClass = module.classForViperComponent(.view, bundle: bundle, deviceType: deviceType) as! UIViewController.Type
+    static func loadView<T: ViperModule, V: UserInterfaceProtocol>(forModule module: T.Type, viewType: V.Type, bundle: Bundle, deviceType: UIUserInterfaceIdiom? = nil) -> V {
+        let viewClass = classForViperComponent(moduleName: module.viewName, component: .view, bundle: bundle, deviceType: deviceType) as! UIViewController.Type
         let viewIdentifier = NSStringFromClass(viewClass).components(separatedBy: ".").last.safeString
         let viewName = module.viewName.uppercasedFirst
 
         switch module.viewType {
         case .nib:
-            return viewClass.init(nibName: viewName, bundle: bundle) as! UserInterfaceProtocol
+            return viewClass.init(nibName: viewName, bundle: bundle) as! V
         case .code:
-            return viewClass.init() as! UserInterfaceProtocol
+            return viewClass.init() as! V
         default:
             let sb = UIStoryboard(name: viewName, bundle: bundle)
-            return sb.instantiateViewController(withIdentifier: viewIdentifier) as! UserInterfaceProtocol
+            return sb.instantiateViewController(withIdentifier: viewIdentifier) as! V
         }
     }
 
-    static func build(view: UserInterfaceProtocol, interactor: InteractorProtocol, presenter: PresenterProtocol, router: RouterProtocol) -> Module {
+    static func build<V: UserInterfaceProtocol, I: InteractorProtocol, P: PresenterProtocol, R: RouterProtocol>(
+        view: V, interactor: I, presenter: P, router: R
+    ) -> Module<V, I, P, R> {
         //View connections
         view._presenter = presenter
 
@@ -106,16 +117,14 @@ extension Module {
         //Router connections
         var router = router
         router._presenter = presenter
-
-        return Module(view: view, interactor: interactor, presenter: presenter, router: router)
+        
+        return Module<V, I, P, R>(view: view, interactor: interactor, presenter: presenter, router: router)
     }
 }
 
-
-// MARK: - Private Extension for Application Module generic enum
-extension RawRepresentable where RawValue == String {
-    func classForViperComponent(_ component: ViperComponentType, bundle: Bundle, deviceType: UIUserInterfaceIdiom? = nil) -> AnyClass? {
-        let className = "\(rawValue.uppercasedFirst)\(component.rawValue.uppercasedFirst)"
+extension Module {
+    static func classForViperComponent(moduleName: String, component: ViperComponentType, bundle: Bundle, deviceType: UIUserInterfaceIdiom? = nil) -> AnyClass? {
+        let className = "\(moduleName.uppercasedFirst)\(component.rawValue.uppercasedFirst)"
         let bundleName = (bundle.infoDictionary?["CFBundleName"] as? String).safeString
 
         let classInBundle = "\(bundleName).\(className)".replacingOccurrences(of: "[ -]", with: "_", options: .regularExpression)
@@ -131,3 +140,6 @@ extension RawRepresentable where RawValue == String {
         return NSClassFromString(classInBundle)
     }
 }
+
+
+
