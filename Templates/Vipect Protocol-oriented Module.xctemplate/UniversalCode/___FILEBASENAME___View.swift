@@ -26,7 +26,9 @@ extension ___VARIABLE_ViperitModuleName___View: ___VARIABLE_ViperitModuleName___
 
 // MARK: - ___VARIABLE_ViperitModuleName___View Viper Components API
 private extension ___VARIABLE_ViperitModuleName___View {
+	// swiftlint:disable force_cast
     var presenter: ___VARIABLE_ViperitModuleName___PresenterApi {
-        return _presenter as! ___VARIABLE_ViperitModuleName___PresenterApi
+        _presenter as! ___VARIABLE_ViperitModuleName___PresenterApi
     }
+    // swiftlint:enable force_cast
 }

@@ -19,7 +19,9 @@ extension ___VARIABLE_ViperitModuleName___Router: ___VARIABLE_ViperitModuleName_
 
 // MARK: - ___VARIABLE_ViperitModuleName___ Viper Components
 private extension ___VARIABLE_ViperitModuleName___Router {
+	// swiftlint:disable force_cast
     var presenter: ___VARIABLE_ViperitModuleName___PresenterApi {
-        return _presenter as! ___VARIABLE_ViperitModuleName___PresenterApi
+        _presenter as! ___VARIABLE_ViperitModuleName___PresenterApi
     }
+    // swiftlint:enable force_cast
 }

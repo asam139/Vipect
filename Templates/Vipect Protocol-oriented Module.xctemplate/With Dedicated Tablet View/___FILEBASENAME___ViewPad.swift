@@ -19,7 +19,9 @@ extension ___VARIABLE_ViperitModuleName___ViewPad: ___VARIABLE_ViperitModuleName
 
 // MARK: - ___FILEBASENAMEASIDENTIFIER___ViewTablet View Components API
 private extension ___VARIABLE_ViperitModuleName___ViewPad {
+	// swiftlint:disable force_cast
     var presenter: ___VARIABLE_ViperitModuleName___PresenterApi {
-        return _presenter as! ___VARIABLE_ViperitModuleName___PresenterApi
+        _presenter as! ___VARIABLE_ViperitModuleName___PresenterApi
     }
+    // swiftlint:enable force_cast
 }

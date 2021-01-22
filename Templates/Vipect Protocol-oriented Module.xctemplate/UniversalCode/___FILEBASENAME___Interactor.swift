@@ -19,7 +19,9 @@ extension ___VARIABLE_ViperitModuleName___Interactor: ___VARIABLE_ViperitModuleN
 
 // MARK: - Interactor Viper Components Api
 private extension ___VARIABLE_ViperitModuleName___Interactor {
+	// swiftlint:disable force_cast
     var presenter: ___VARIABLE_ViperitModuleName___PresenterApi {
-        return _presenter as! ___VARIABLE_ViperitModuleName___PresenterApi
+        _presenter as! ___VARIABLE_ViperitModuleName___PresenterApi
     }
+    // swiftlint:enable force_cast
 }

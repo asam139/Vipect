@@ -36,13 +36,15 @@ extension ___VARIABLE_ViperitModuleName___Presenter: ___VARIABLE_ViperitModuleNa
 
 // MARK: - ___VARIABLE_ViperitModuleName___ Viper Components
 private extension ___VARIABLE_ViperitModuleName___Presenter {
+    // swiftlint:disable force_cast
     var view: ___VARIABLE_ViperitModuleName___ViewApi {
-        return _view as! ___VARIABLE_ViperitModuleName___ViewApi
+        _view as! ___VARIABLE_ViperitModuleName___ViewApi
     }
     var interactor: ___VARIABLE_ViperitModuleName___InteractorApi {
-        return _interactor as! ___VARIABLE_ViperitModuleName___InteractorApi
+        _interactor as! ___VARIABLE_ViperitModuleName___InteractorApi
     }
     var router: ___VARIABLE_ViperitModuleName___RouterApi {
-        return _router as! ___VARIABLE_ViperitModuleName___RouterApi
+        _router as! ___VARIABLE_ViperitModuleName___RouterApi
     }
+    // swiftlint:enable force_cast
 }
