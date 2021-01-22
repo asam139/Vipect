@@ -1,9 +1,9 @@
 //
 //  HomePresenter.swift
-//  Vipect_Example
+//  Vipect
 //
-//  Created by Saul Moreno Abril on 23/12/20.
-//  Copyright © 2020 CocoaPods. All rights reserved.
+//  Created by Saúl Moreno Abril on 22/1/21.
+//  Copyright © 2021 CocoaPods. All rights reserved.
 //
 
 import Foundation
@@ -11,17 +11,12 @@ import Vipect
 import RxSwift
 import RxCocoa
 
-
+// MARK: - HomePresenter Class
 final class HomePresenter: Presenter {
     private var disposeBag = DisposeBag()
     private let messageSub = PublishRelay<String>()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        loadContent()
-    }
-
-    override func bindWithView() {
+    
+	override func bindWithView() {
         super.bindWithView()
 
         let input = view.input
@@ -45,7 +40,7 @@ final class HomePresenter: Presenter {
     }
 }
 
-extension HomePresenter {    
+extension HomePresenter {
     func loadContent() {
         showLoading()
         interactor.someInteractorOperation()
@@ -59,26 +54,36 @@ extension HomePresenter {
         messageSub.accept(message)
     }
 
+
+}
+
+// MARK: - HomePresenter API
+extension HomePresenter: HomePresenterApi {
+    func showSecondModule() {
+        router.showSecondModule()
+    }
+    
+    func showThirdModule() {
+        router.showThirdModule()
+    }
+    
     func reactToSomeInteractorOperation() {
         print("Home Presenter Reacted to Some Interactor Operation")
         showInfo(message: "CONTENT_LOADED")
     }
-
-    func showSecondModule() {
-        router.showSecondModule()
-    }
 }
 
-
-// MARK: - VIPER COMPONENTS API (Auto-generated code)
+// MARK: - Home Viper Components
 private extension HomePresenter {
-    var view: HomeViewInterface {
-        return _view as! HomeViewInterface
+    // swiftlint:disable force_cast
+    var view: HomeViewApi {
+        _view as! HomeViewApi
     }
-    var interactor: HomeInteractor {
-        return _interactor as! HomeInteractor
+    var interactor: HomeInteractorApi {
+        _interactor as! HomeInteractorApi
     }
-    var router: HomeRouter {
-        return _router as! HomeRouter
+    var router: HomeRouterApi {
+        _router as! HomeRouterApi
     }
+    // swiftlint:enable force_cast
 }

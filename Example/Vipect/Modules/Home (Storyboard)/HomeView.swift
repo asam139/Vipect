@@ -1,9 +1,9 @@
 //
 //  HomeView.swift
-//  Vipect_Example
+//  Vipect
 //
-//  Created by Saul Moreno Abril on 23/12/20.
-//  Copyright © 2020 CocoaPods. All rights reserved.
+//  Created by Saúl Moreno Abril on 22/1/21.
+//  Copyright © 2021 CocoaPods. All rights reserved.
 //
 
 import UIKit
@@ -12,27 +12,25 @@ import RxSwift
 import RxCocoa
 
 
-// MARK: - Public Interface Protocol
-protocol HomeViewInterface {
-    var input: HomeViewInput { get }
-    func bindOutput(_ output: HomeViewOutput)
-}
-
-// MARK: Home View
+// MARK: HomeView Class
 final class HomeView: UserInterface {
     private var disposeBag = DisposeBag()
     private let actionSubject = PublishRelay<HomeViewAction>()
 
     @IBOutlet weak var messageLabel: UILabel!
 
-    @IBAction func goToSecondModuleButtonPressed() {
+    @IBAction func goToSecondModule() {
         presenter.showSecondModule()
+    }
+    
+    @IBAction func goToThirdModule() {
+        presenter.showThirdModule()
     }
 }
 
-// MARK: - Public interface
-extension HomeView: HomeViewInterface {
-    var input: HomeViewInput {
+// MARK: - HomeView API
+extension HomeView: HomeViewApi {
+	var input: HomeViewInput {
         HomeViewInput(action: actionSubject.asDriver(onErrorDriveWith: Driver.empty()))
     }
 
@@ -44,9 +42,11 @@ extension HomeView: HomeViewInterface {
     }
 }
 
-// MARK: - VIPER COMPONENTS API (Auto-generated code)
+// MARK: - HomeView Viper Components API
 private extension HomeView {
-    var presenter: HomePresenter { return _presenter as! HomePresenter }
+	// swiftlint:disable force_cast
+    var presenter: HomePresenterApi {
+        _presenter as! HomePresenterApi
+    }
+    // swiftlint:enable force_cast
 }
-
-

@@ -11,20 +11,20 @@ import Vipect
 
 //MARK: - Application modules
 enum AppModules: String, ViperModule {
+    case tableOfContents
     case home
     case second
-    case tableOfContents
-    case cool
+    case third
     case simple
-    case perfect
-    case qrScanner = "QRScanner"
+    case cool
 
     var viewType: ViperViewType {
         switch self {
-        case .cool, .perfect: return .swiftUI
         case .tableOfContents: return .code
+        case .home, .second: return .storyboard
+        case .third: return .nib
         case .simple: return .code
-        default: return .storyboard
+        case .cool: return .swiftUI
         }
     }
 }

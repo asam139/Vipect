@@ -43,8 +43,7 @@ extension CoolPresenter: CoolPresenterApi {
     }
     
     func showAnotherModule() {
-        print("Show another module")
-        router.goToPerfect()
+        router.goToSecond()
     }
 }
 

@@ -10,7 +10,7 @@ import Vipect
 
 //MARK: - CoolRouter API
 protocol CoolRouterApi: RouterProtocol {
-    func goToPerfect()
+    func goToSecond()
 }
 
 //MARK: - CoolPresenter API

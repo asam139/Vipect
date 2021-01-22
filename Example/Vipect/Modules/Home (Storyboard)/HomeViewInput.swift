@@ -1,9 +1,9 @@
 //
 //  HomeViewInput.swift
-//  Vipect_Example
+//  Vipect
 //
-//  Created by Saul Moreno Abril on 27/12/20.
-//  Copyright © 2020 CocoaPods. All rights reserved.
+//  Created by Saúl Moreno Abril on 22/1/21.
+//  Copyright © 2021 CocoaPods. All rights reserved.
 //
 
 import Foundation

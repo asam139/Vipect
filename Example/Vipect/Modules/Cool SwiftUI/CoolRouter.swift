@@ -15,13 +15,9 @@ final class CoolRouter: Router {
 
 // MARK: - CoolRouter API
 extension CoolRouter: CoolRouterApi {
-    func goToPerfect() {
-        let module = AppModules.perfect.build { _ in
-            PerfectView()
-        }
-        
-        let router = module.router as! PerfectRouter
-        router.show(from: viewController)
+    func goToSecond() {
+        let module = AppModules.second.build()
+        module.router.show(from: viewController)
     }
 }
 
