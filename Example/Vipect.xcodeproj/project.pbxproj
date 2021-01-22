@@ -25,6 +25,13 @@
 		861E260725BAF7DB00309D44 /* ThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861E25FF25BAF7DB00309D44 /* ThirdView.swift */; };
 		861E260825BAF7DB00309D44 /* ThirdViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861E260025BAF7DB00309D44 /* ThirdViewOutput.swift */; };
 		861E260925BAF7DB00309D44 /* Third.xib in Resources */ = {isa = PBXBuildFile; fileRef = 861E260125BAF7DB00309D44 /* Third.xib */; };
+		861E260F25BAFEA700309D44 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861E260E25BAFEA700309D44 /* UserDTO.swift */; };
+		861E261725BAFF9500309D44 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861E261625BAFF9500309D44 /* User.swift */; };
+		861E261E25BB035300309D44 /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861E261D25BB035300309D44 /* UserApi.swift */; };
+		861E263225BB05A100309D44 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861E263125BB05A100309D44 /* UserRepository.swift */; };
+		861E264425BB0B4700309D44 /* Container+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861E264325BB0B4700309D44 /* Container+.swift */; };
+		861E264A25BB104700309D44 /* UserApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861E264925BB104700309D44 /* UserApiService.swift */; };
+		861E265325BB118B00309D44 /* UserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861E265225BB118B00309D44 /* UserUseCase.swift */; };
 		869D644325B73457006F504C /* UserInterfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869D644225B73457006F504C /* UserInterfaceTests.swift */; };
 		869D644925B73651006F504C /* CollectionUserInterfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869D644825B73651006F504C /* CollectionUserInterfaceTests.swift */; };
 		869D644D25B7366A006F504C /* SplitUserInterfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869D644C25B7366A006F504C /* SplitUserInterfaceTests.swift */; };
@@ -133,6 +140,13 @@
 		861E25FF25BAF7DB00309D44 /* ThirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdView.swift; sourceTree = "<group>"; };
 		861E260025BAF7DB00309D44 /* ThirdViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewOutput.swift; sourceTree = "<group>"; };
 		861E260125BAF7DB00309D44 /* Third.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Third.xib; sourceTree = "<group>"; };
+		861E260E25BAFEA700309D44 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
+		861E261625BAFF9500309D44 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		861E261D25BB035300309D44 /* UserApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
+		861E263125BB05A100309D44 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		861E264325BB0B4700309D44 /* Container+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+.swift"; sourceTree = "<group>"; };
+		861E264925BB104700309D44 /* UserApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiService.swift; sourceTree = "<group>"; };
+		861E265225BB118B00309D44 /* UserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUseCase.swift; sourceTree = "<group>"; };
 		869D644225B73457006F504C /* UserInterfaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserInterfaceTests.swift; path = ../../../../Vipect/Example/Tests/Core/UserInterfaceTests.swift; sourceTree = "<group>"; };
 		869D644825B73651006F504C /* CollectionUserInterfaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionUserInterfaceTests.swift; path = ../../../../Vipect/Example/Tests/Core/CollectionUserInterfaceTests.swift; sourceTree = "<group>"; };
 		869D644C25B7366A006F504C /* SplitUserInterfaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SplitUserInterfaceTests.swift; path = ../../../../Vipect/Example/Tests/Core/SplitUserInterfaceTests.swift; sourceTree = "<group>"; };
@@ -261,7 +275,10 @@
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				9C7C8501259391DA00C4992B /* AppModules.swift */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				861E264225BB0B3400309D44 /* DI */,
 				9C7C851A259393A600C4992B /* Modules */,
+				861E260C25BAFC9600309D44 /* Data */,
+				861E261425BAFF8100309D44 /* Domain */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Vipect;
@@ -334,6 +351,74 @@
 				861E260125BAF7DB00309D44 /* Third.xib */,
 			);
 			path = "Third (Xib)";
+			sourceTree = "<group>";
+		};
+		861E260C25BAFC9600309D44 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				861E260D25BAFCA300309D44 /* Entities */,
+				861E261C25BB034400309D44 /* ApiServices */,
+				861E263025BB057C00309D44 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		861E260D25BAFCA300309D44 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				861E260E25BAFEA700309D44 /* UserDTO.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		861E261425BAFF8100309D44 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				861E265125BB117A00309D44 /* UseCase */,
+				861E261525BAFF8900309D44 /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		861E261525BAFF8900309D44 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				861E261625BAFF9500309D44 /* User.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		861E261C25BB034400309D44 /* ApiServices */ = {
+			isa = PBXGroup;
+			children = (
+				861E261D25BB035300309D44 /* UserApi.swift */,
+				861E264925BB104700309D44 /* UserApiService.swift */,
+			);
+			path = ApiServices;
+			sourceTree = "<group>";
+		};
+		861E263025BB057C00309D44 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				861E263125BB05A100309D44 /* UserRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		861E264225BB0B3400309D44 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				861E264325BB0B4700309D44 /* Container+.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		861E265125BB117A00309D44 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				861E265225BB118B00309D44 /* UserUseCase.swift */,
+			);
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 		869D644125B733FD006F504C /* Core */ = {
@@ -716,6 +801,8 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Vipect_Example/Pods-Vipect_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -724,6 +811,8 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -778,6 +867,7 @@
 				861E260825BAF7DB00309D44 /* ThirdViewOutput.swift in Sources */,
 				861E260425BAF7DB00309D44 /* ThirdRouter.swift in Sources */,
 				9C7C8556259393A600C4992B /* SecondInteractor.swift in Sources */,
+				861E260F25BAFEA700309D44 /* UserDTO.swift in Sources */,
 				861E25C625BAF2B000309D44 /* HomeView.swift in Sources */,
 				9C7C855C259393A600C4992B /* SimpleModuleApi.swift in Sources */,
 				9C7C8554259393A600C4992B /* SecondView.swift in Sources */,
@@ -788,16 +878,22 @@
 				9C7C8502259391DA00C4992B /* AppModules.swift in Sources */,
 				9C7C8567259393A600C4992B /* TableOfContentsInteractor.swift in Sources */,
 				9C7C8559259393A600C4992B /* SimpleView.swift in Sources */,
+				861E261E25BB035300309D44 /* UserApi.swift in Sources */,
 				861E260225BAF7DB00309D44 /* ThirdViewInput.swift in Sources */,
+				861E264425BB0B4700309D44 /* Container+.swift in Sources */,
+				861E261725BAFF9500309D44 /* User.swift in Sources */,
 				9C7C8562259393A600C4992B /* CoolModuleApi.swift in Sources */,
 				9C7C8553259393A600C4992B /* SecondViewPad.swift in Sources */,
+				861E263225BB05A100309D44 /* UserRepository.swift in Sources */,
 				9C7C8560259393A600C4992B /* CoolPresenter.swift in Sources */,
+				861E264A25BB104700309D44 /* UserApiService.swift in Sources */,
 				861E260525BAF7DB00309D44 /* ThirdModuleApi.swift in Sources */,
 				861E260725BAF7DB00309D44 /* ThirdView.swift in Sources */,
 				9C7C8569259393A600C4992B /* TableOfContentsRouter.swift in Sources */,
 				9C7C8564259393A600C4992B /* TableOfContentsView.swift in Sources */,
 				861E25C525BAF2B000309D44 /* HomeInteractor.swift in Sources */,
 				9C7C855B259393A600C4992B /* SimplePresenter.swift in Sources */,
+				861E265325BB118B00309D44 /* UserUseCase.swift in Sources */,
 				9C7C855F259393A600C4992B /* CoolRouter.swift in Sources */,
 				9C7C855A259393A600C4992B /* SimpleInteractor.swift in Sources */,
 				9C7C855E259393A600C4992B /* UserSettings.swift in Sources */,

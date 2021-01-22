@@ -6,8 +6,9 @@ inhibit_all_warnings!
 
 target 'Vipect_Example' do
   pod 'Vipect', :path => '../'
-  pod 'RxSwift', '~> 6.0'
-  pod 'RxCocoa', '~> 6.0'
+  pod 'RxSwift', '~> 5.0'
+  pod 'RxCocoa', '~> 5.0'
+  pod 'Moya/RxSwift', '~> 14.0'
 
   target 'Vipect_Tests' do
     inherit! :search_paths
